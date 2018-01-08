@@ -23,7 +23,7 @@ def get_time():
     
     tables= soup.find_all('table') #finds all the tables with bus times
     
-    f = open('bus_times.csv','w')
+    f = open('bluebus_schedules.csv','w')
     
     for table in tables:
         for row in table.find_all("tr"):
