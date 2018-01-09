@@ -65,7 +65,6 @@ def relevant_csv():
 
     today = (datetime.datetime.now()).strftime('%A')  #gives the name of the day   
     print today
-    
     for csv in csv_list:
         if today in csv:
             relevant_csv = csv
@@ -73,6 +72,7 @@ def relevant_csv():
     time_dict_list = get_data(relevant_csv)  #a list of dictionaries with relevant time for the current day
     
     return time_dict_list
+
 
 
 import datetime
@@ -85,22 +85,23 @@ def bus_to_HC():
     Gets relevant bus times according to the current time
     """
     time_dict_list = relevant_csv()
+    
     next_buses = ""
-   
     for time_dict in  time_dict_list:
         time_now =  datetime.datetime.now()  #current time
-        time_in_2hrs = datetime.datetime.now() + datetime.timedelta(hours=2.75) #the point after the next 3 buses
-         
-        bus_time = str(timestring.Date(time_dict['LeaveBrynMawr'])) #formats to today's time as a string            
-        bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S')
-            
-        if (time_now >= bus_time) and (time_in_2hrs >= bus_time):
-            next_buses += str(time_dict['LeaveBrynMawr']) + " -> " +str(time_dict['ArriveHaverford']) + " \n"
-            
-        else:
-            pass
-            
-    return next_buses
+        time_in_2hrs = datetime.datetime.now() + datetime.timedelta(hours=1.75) #the point after the next 3 buses
+        
+        bus_time = str(timestring.Date(time_dict['LeaveBrynMawr'])) #formats to today's time as a string
+        
+        bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S') #converts the time string into a datetime object for comparison
+        if time_now <= bus_time and time_in_2hrs >= bus_time:
+        
+            next_buses += str(time_dict['LeaveBrynMawr']) + " -> " + str(time_dict['ArriveHaverford']) + "\n"     
+     
+    if next_buses != "":
+        return next_buses
+    else:
+        return "Sorry! There are no buses at this time. Please check back later!"
 
 """
 Function gives the time for the next bus to Bryn Mawr
@@ -114,16 +115,20 @@ def bus_to_BMC():
    
     for time_dict in  time_dict_list:
         time_now =  datetime.datetime.now()  #current time
-        time_in_2hrs = datetime.datetime.now() + datetime.timedelta(hours=2.75) #the point after the next 3 buses
-         
-        bus_time = str(timestring.Date(time_dict['LeaveHaverford'])) #formats to today's time as a string            
-        bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S')
-            
-        if (time_now >= bus_time) and (time_in_2hrs >= bus_time):
-            next_buses += str(time_dict['LeaveHaverford']) + " -> " +str(time_dict['ArriveBrynMawr']) + " \n"
-            
-        else:
-            pass
-            
-    return next_buses
+        time_in_2hrs = datetime.datetime.now() + datetime.timedelta(hours=1.75) #the point after the next 3 buses
+        
+        bus_time = str(timestring.Date(time_dict['LeaveHaverford'])) #formats to today's time as a string
+        bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S') #converts the time string into a datetime object for comparison
+
+        if time_now <= bus_time and time_in_2hrs >= bus_time:
+            next_buses += str(time_dict['LeaveHaverford']) + " -> " +str(time_dict['ArriveBrynMawr']) + "\n"
+    
+    if next_buses != "":
+        return next_buses
+    else:
+        return "Sorry! There are no buses at this time. Please check back later!"
+
+
+
+
 
