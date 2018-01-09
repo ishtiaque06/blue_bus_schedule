@@ -89,7 +89,7 @@ def next_bus():
             if time_now <= bus_time and time_in_2hrs >= bus_time:
                 print time_dict['LeaveBrynMawr'] + " -> " +str(time_dict['ArriveHaverford'])
             
-        elif destination in ["BrynMawr", "BMC", "brynmawr", "bryn mawr"]:
+        elif destination in ["BrynMawr", "Bryn Mawr", "BMC", "brynmawr", "bryn mawr"]:
             bus_time = time_dict['LeaveHaverford']
             bus_time = str(timestring.Date(bus_time)) 
             bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S') #converts the time string into a datetime object for comparison
