@@ -97,11 +97,34 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+h1 {
+    font-family: 'Bellefair', serif;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    padding: 0px;
+    margin: 0px;
+}
 
+p {
+    font-family: 'Encode Sans Expanded', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
 
+div.header {
+    background-color: #ff4d4d;
+    top: 0px;
+    display: block;
+    width: 100%;
+    height: 90px;
+    vertical-align: middle;
+}
 
-
-
+body {
+    /*background-color: #00ffcc;*/
+}
 
 
 
