@@ -20,4 +20,5 @@ def parser():
             new_file.close()
 
     initial.close()
+    
     return csv_list

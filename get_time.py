@@ -8,7 +8,7 @@ import urllib2
 from bs4 import BeautifulSoup
 
 """
-Function parses through the Blue_Bus website and retrives Bus times in a CSV file
+Function parses through the Blue_Bus website and retrives all Bus times in a CSV file
 """
 def get_time():
     #specify the url
