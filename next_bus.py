@@ -128,7 +128,7 @@ def bus_to_BMC():
     else:
         return "Sorry! There are no buses at this time. Please check back later!"
 
-
+print bus_to_HC()
 
 
 
