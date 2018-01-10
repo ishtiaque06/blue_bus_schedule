@@ -11,5 +11,7 @@ def next_bus():
     
     print "Next Bus to Haverford\n" + to_HC + "\n" + "Next Bus to BrynMawr\n" + to_BMC
 
-next_bus()
+
+if __name__ == '__main__':
+    next_bus()
 

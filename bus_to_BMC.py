@@ -28,3 +28,6 @@ def bus_to_BMC():
     
     else:
         return "Sorry! There are no buses at this time. Please check back later!"
+
+if __name__ == '__main__':
+    print bus_to_BMC()

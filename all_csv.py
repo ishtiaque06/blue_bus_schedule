@@ -20,3 +20,7 @@ def relevant_csv():
     return time_dict_list
 
 
+if __name__ == '__main__':
+    relevant_csv()
+
+

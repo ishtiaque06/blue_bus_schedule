@@ -34,5 +34,7 @@ def get_time():
             f.write(row+"\n")
             
     f.close()
-get_time()
+
+if __name__ == '__main__':
+    get_time()
 
