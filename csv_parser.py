@@ -20,4 +20,9 @@ def parser():
             new_file.close()
 
     initial.close()
+    
     return csv_list
+
+
+if __name__ == '__main__':
+    parser()
