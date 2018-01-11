@@ -13,6 +13,7 @@
 
         <link rel="stylesheet" href="../static/css/normalize.css">
         <link rel="stylesheet" href="../static/css/main.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -20,13 +21,31 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="header">
-        	<h1>Blue Bus Schedule</h1>
+
+        <!--<div class="header"><h1>Blue Bus Schedule</h1></div>-->
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="http://www.haverford.edu">Haverford College</a>
+            <a href="http://www.brynmawr.edu">Bryn Mawr College</a>
         </div>
+
+        <header class="header-basic-light">
+
+	        <div>
+                <button style="font-size:30px;cursor:pointer;float:left; color: #fff0be;
+                border: none; background-color: Transparent;margin-top: 15px" onclick="openNav()">&#9776;</button>
+
+		        <h1 class="header-h1">Bi-Co Blue Blus Schedule</h1>
+
+	        </div>
+
+        </header>
+
 
         <!--Main paragraph-->
         <p>This page lets you know when the next Blue Bus is. You can also specify a time when you want to leave and get the next Blue Bus time from that.</p>
-        
+
         <!--Button div for styling both the buttons. They
             can be styled individually if necessary.-->
         <div class = "btn-group">
@@ -48,6 +67,21 @@
         <script src="../static/js/main.js"></script>
         <script src="../static/js/toHaverford.js"></script>
         <script src="../static/js/toBrynMawr.js"></script>
+
+
+        <script>
+            function openNav() {
+            document.getElementById("mySidenav").style.width = "300px";
+            document.getElementById("main").style.marginLeft = "300px";
+            document.body.style.backgroundColor = "rgba(162, 0, 0, 1)";
+            }
+
+            function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+            }
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
