@@ -23,15 +23,27 @@
         <div class="header">
         	<h1>Blue Bus Schedule</h1>
         </div>
+
+        <!--Main paragraph-->
         <p>This page lets you know when the next Blue Bus is. You can also specify a time when you want to leave and get the next Blue Bus time from that.</p>
+        
+        <!--Button div for styling both the buttons. They
+            can be styled individually if necessary.-->
         <div class = "btn-group">
-        	<button class="option-toHaverford"><span>To Haverford </span></button>
-        	<button class="option-toBrynMawr"><span>To Bryn Mawr </span></button>
+        	<button class=option-toHaverford><span>To Haverford </span></button>
+        	<button class=option-toBrynMawr><span>To Bryn Mawr </span></button>
         </div>
-        <p id="toDestination">What are the times?</p>
+
+        <!--This paragraph element changes according to button press-->
+        <p id=toDestination>What are the times?</p>
+
+        <!--scripts!-->
         <script src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
+
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
         <script>window.jQuery || document.write('<script src="../static/js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+
         <script src="../static/js/plugins.js"></script>
         <script src="../static/js/main.js"></script>
         <script src="../static/js/toHaverford.js"></script>
