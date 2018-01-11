@@ -18,12 +18,14 @@ def index():
 def to_Haverford():
 	print "Debugging at Haverford"
 	times = bus_to_HC()
+	
 	return jsonify(result=times)
 
 @app.route('/to_Bryn_Mawr')
 def to_Bryn_Mawr():
 	print "Debugging at Bryn Mawr"
 	times = bus_to_BMC()
+	
 	return jsonify(result=times)
 
 @app.errorhandler(404)
