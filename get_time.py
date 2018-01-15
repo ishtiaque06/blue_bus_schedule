@@ -1,40 +1,68 @@
+#Imports CSV writer
+import csv
 
-# coding: utf-8
-
-# In[ ]:
-
-#import libraries
-import urllib2
+#BeautifulSoup for HTML reading
 from bs4 import BeautifulSoup
 
-"""
-Function parses through the Blue_Bus website and retrives all Bus times in a CSV file
-"""
+#URLLib to store a webpage for BeautifulSoup to read
+import urllib2
+
+#The following function parses the latest blue bus schedules into CSV files based on the day of the week.
 def get_time():
-    #specify the url
-    bus_page = 'http://www.brynmawr.edu/transportation/bico.shtml'
 
-    #query website and return the html
+	#Link to the bus page for use by URL Lib
+	bus_page = 'http://www.brynmawr.edu/transportation/bico.shtml'
 
-    page = urllib2.urlopen(bus_page)
+	#Load page as a urllib object, this makes the page readable by beautifulsoup
+	page = urllib2.urlopen(bus_page)
 
-    #parse the html using BeautifulSoup as a string
-    soup = BeautifulSoup(page, 'lxml') 
-    
-    tables= soup.find_all('table') #finds all the tables with bus times
-    
-    f = open('bluebus_schedules.csv','w')
-    
-    for table in tables:
-        for row in table.find_all("tr"):
-            row = row.get_text(", ", strip=True) # removes white spaces and tabs between rows in text
+	#Using HTML5Lib parser with BeautifulSoup to open the Bi-Co Blue Bus page
+	soup = BeautifulSoup(page, 'html5lib')
 
-            row = row.encode('ascii', 'ignore') # removes symbols in Unicode and keeps strings
-            row =  ("".join(row.split()))  #removes all whitespaces before, after and inbetween strings
-            f.write(row+"\n")
-            
-    f.close()
+	#Initiates a list of soup tables in the page
+	tables = soup.find_all('table')
 
+	#Iterates through every soup tables
+	for table in tables:
+
+		#This parses the table headers
+		headers = [header.text.encode('utf8') for header in table.find_all('th')]
+		'''The first element of the table headers is always the day.
+		   We will use the day's name as the name of the CSV file'''
+		filename = headers.pop(0)
+
+		#This gets rid of spaces to make every filename uniform
+		filename = filename.replace(' ', '')
+
+		'''This special string occurs several times for some bizarre reason on Saturday schedules.
+		Corner case.'''
+		space = '\n                   '
+
+		#The following two if blocks get rid of newlines and the above character in the headers
+		for index, value in enumerate(headers):
+			headers[index] = value.replace(space, '')
+		for index, value in enumerate(headers):
+			headers[index] = value.replace('\n', '')
+
+		#initiate list for each row in each day's soup table
+		rows = []
+		'''"tr" is the row in the table
+		and "td" is each element in each row'''
+		for row in table.find_all('tr'):
+			rows.append([val.text.encode('utf8') 
+				for val in row.find_all('td')])
+
+		'''This deletes empty lists generated at the start of every day's rows.
+		This results from parsing the web page and so is unavoidable.'''
+		rows = [row for row in rows if row != []]
+
+		'''This writes every header and rows for an individual day
+		in the file labeled with that day's name.'''
+		with open(filename + '.csv', 'wb') as f:
+			writer = csv.writer(f)
+			writer.writerow(headers)
+			writer.writerows(row for row in rows if row)
+
+#Call function when the file is run.
 if __name__ == '__main__':
-    get_time()
-
+	get_time()
