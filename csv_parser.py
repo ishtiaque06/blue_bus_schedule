@@ -20,9 +20,37 @@ def parser():
             new_file.close()
 
     initial.close()
+    """
     
+    #Makes all the CSV headers uniform except SaturdayDaytime.csv
+    
+    for csv in csv_list:
+        with open(csv, "r") as f:
+            lines = f.readlines()        
+            column_headers = (lines[0].split(","))
+            new_header = ""
+            
+            for header in column_headers:
+                header = header.replace(" ", "")
+                
+                if header == "BrynMawrtoHaverford":
+                    header = "LeaveBrynMawr"
+                    new_header += header + ","
+
+                elif header == "HaverfordtoBrynMawr":
+                    header = "LeaveHaverford"
+                    new_header += header + ","
+                    
+            if new_header != "":
+                lines[0] = new_header
+                
+                with open(csv,"w") as new_csv:
+                    for line in lines:
+                        new_csv.write(line)
+    """                   
     return csv_list
 
 
 if __name__ == '__main__':
     parser()
+
