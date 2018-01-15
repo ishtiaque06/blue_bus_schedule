@@ -1,4 +1,4 @@
-from all_csv import relevant_csv
+from get_relevant_csv import relevant_csv
 
 import datetime
 import calendar, timestring
@@ -11,6 +11,7 @@ def bus_to_BMC():
     Gets relevant bus times according to the current time
     """
     time_dict_list = relevant_csv()
+    today = (datetime.datetime.now()).strftime('%A')
     next_buses = ""
    
     for time_dict in  time_dict_list:
