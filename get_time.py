@@ -1,3 +1,8 @@
+'''Changelog 1/18/2018: 
+	This program now does the job of the initial parser file as well,
+	and supplies get_relevant_csv.py with the necessary list of 
+	files according to the schedules present in the Bi-Co Blue Bus Schedule'''
+
 #Imports CSV writer
 import csv
 
@@ -22,27 +27,29 @@ def get_time():
 	#Initiates a list of soup tables in the page
 	tables = soup.find_all('table')
 
-	#Iterates through every soup tables
+	#This list will contain the filenames of each day.
+	day_list = []
+
+	#Iterates through every soup table
 	for table in tables:
 
 		#This parses the table headers
 		headers = [header.text.encode('utf8') for header in table.find_all('th')]
 		'''The first element of the table headers is always the day.
 		   We will use the day's name as the name of the CSV file'''
-		filename = headers.pop(0)
+		filename = headers.pop(0) + '.csv'
 
 		#This gets rid of spaces to make every filename uniform
 		filename = filename.replace(' ', '')
+		day_list.append(filename)
 
-		'''This special string occurs several times for some bizarre reason on Saturday schedules.
-		Corner case.'''
-		space = '\n                   '
-
-		#The following two if blocks get rid of newlines and the above character in the headers
-		for index, value in enumerate(headers):
-			headers[index] = value.replace(space, '')
+		#The following two if blocks get rid of newlines and spaces in the schedule headers
+		#Sample output row: ['LeaveBrynMawr', 'ArriveHaverford', 'LeaveHaverford', 'ArriveBrynMawr']
 		for index, value in enumerate(headers):
 			headers[index] = value.replace('\n', '')
+		for index, value in enumerate(headers):
+			headers[index] = value.replace(' ', '')
+		#print headers
 
 		#initiate list for each row in each day's soup table
 		rows = []
@@ -58,11 +65,12 @@ def get_time():
 
 		'''This writes every header and rows for an individual day
 		in the file labeled with that day's name.'''
-		with open(filename + '.csv', 'wb') as f:
+		with open(filename, 'wb') as f:
 			writer = csv.writer(f)
 			writer.writerow(headers)
 			writer.writerows(row for row in rows if row)
+	return day_list
 
 #Call function when the file is run.
 if __name__ == '__main__':
-	get_time()
+	print get_time()
