@@ -12,6 +12,9 @@ def parser():
         #This block fixes the headings for Saturday night and Sunday.
         if line == "BrynMawrtoHaverford,HaverfordtoBrynMawr\n":
         	line = "LeaveBrynMawr,LeaveHaverford\n"
+        if line == "LeavesBMC,LeavesSuburbanSquare,LeavesHCSouthLotBusStop,LeavesStokes,LeavesSuburbanSquare\n":
+            line = "LeaveBrynMawr,LeaveSuburbanSquare,LeaveHCSouthLotBusStop,LeaveHaverford,LeaveSuburbanSquare\n"
+        print line
         if ',' not in line: #If the line doesn't contain a comma, it's a title
             filename = line[:-1] + '.csv' #the title is used to make the filename.csv
             new_file = open((os.path.join('csv_schedules', filename)), 'w') #new file opened to write to
