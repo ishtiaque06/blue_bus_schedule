@@ -7,7 +7,9 @@ def parser():
     csv_list = []
     #loops through the input file
     for line in initial:
-
+        print line
+        if line == "BrynMawrtoHaverford,HaverfordtoBrynMawr\n":
+        	line = "LeaveBrynMawr,LeaveHaverford\n"
         if ',' not in line: #If the line doesn't contain a comma, it's a title
             filename = line[:-1] + '.csv' #the title is used to make the filename.csv
             new_file = open(filename, 'w') #new file opened to write to

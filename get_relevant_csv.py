@@ -1,12 +1,5 @@
-'''Changelog 1/18/2018:
-    The csv_parser file is not going to be used anymore. This is because get_time 
-    will now return a list of days that is compatible with the code below
-    in the form ['Monday.csv', 'Tuesday.csv', 'Wednesday.csv', 'Thursday.csv',
-     'Friday.csv', 'SaturdayDaytime.csv', 'SaturdayNight.csv', 'Sunday.csv']'''
-
+from csv_parser import parser
 from get_csv_data import get_data
-
-from get_time import get_time
 
 import datetime, timestring
 
@@ -14,7 +7,7 @@ import datetime, timestring
 Function retrieves the day's relevant csv file and returns a list of dictionaries of time
 """
 def relevant_csv():
-    csv_list = get_time() #makes list of csvs parsed from the BlueBus Website
+    csv_list = parser() #makes list of csvs parsed from the BlueBus Website
     today = (datetime.datetime.now()).strftime('%A')  #gives the name of the day
     time_now =  datetime.datetime.now()
     
