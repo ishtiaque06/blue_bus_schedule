@@ -1,8 +1,9 @@
 """
 Takes a csv filename and returns data as a list of dictionaries
 """
+import os.path
 def get_data(filename):
-    f = open(filename, "r")
+    f = open(os.path.join('csv_schedules', filename), "r")
     line = f.readline() #reads line in the file
     location = line.strip().split(",")  # gets the location, either leaving or arriving HC or BMC
     

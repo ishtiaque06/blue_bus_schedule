@@ -12,10 +12,12 @@ def bus_to_BMC():
     """
     time_dict_list = relevant_csv()
     today = (datetime.datetime.now()).strftime('%A')
+    print today
     next_buses = ""
    
     for time_dict in  time_dict_list:
         time_now =  datetime.datetime.now()  #current time
+        print time_now
         time_in_2hrs = datetime.datetime.now() + datetime.timedelta(hours=1.5) #the point after the next 3 buses
         
         bus_time = str(timestring.Date(time_dict['LeaveHaverford'])) #formats to today's time as a string
