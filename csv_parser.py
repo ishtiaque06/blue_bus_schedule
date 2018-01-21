@@ -7,7 +7,6 @@ def parser():
     csv_list = []
     #loops through the input file
     for line in initial:
-        print line
         if line == "BrynMawrtoHaverford,HaverfordtoBrynMawr\n":
         	line = "LeaveBrynMawr,LeaveHaverford\n"
         if ',' not in line: #If the line doesn't contain a comma, it's a title
@@ -21,35 +20,7 @@ def parser():
             new_file.write(line[:-1] + "\n")
             new_file.close()
 
-    initial.close()
-    """
-    
-    #Makes all the CSV headers uniform except SaturdayDaytime.csv
-    
-    for csv in csv_list:
-        with open(csv, "r") as f:
-            lines = f.readlines()        
-            column_headers = (lines[0].split(","))
-            new_header = ""
-            
-            for header in column_headers:
-                header = header.replace(" ", "")
-                
-                if header == "BrynMawrtoHaverford":
-                    header = "LeaveBrynMawr"
-                    new_header += header + ","
-
-                elif header == "HaverfordtoBrynMawr":
-                    header = "LeaveHaverford"
-                    new_header += header + ","
-                    
-            if new_header != "":
-                lines[0] = new_header
-                
-                with open(csv,"w") as new_csv:
-                    for line in lines:
-                        new_csv.write(line)
-    """                   
+    initial.close()   
     return csv_list
 
 
