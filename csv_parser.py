@@ -14,7 +14,7 @@ def parser():
         	line = "LeaveBrynMawr,LeaveHaverford\n"
         if line == "LeavesBMC,LeavesSuburbanSquare,LeavesHCSouthLotBusStop,LeavesStokes,LeavesSuburbanSquare\n":
             line = "LeaveBrynMawr,LeaveSuburbanSquare,LeaveHCSouthLotBusStop,LeaveHaverford,LeaveSuburbanSquare\n"
-        print line
+            
         if ',' not in line: #If the line doesn't contain a comma, it's a title
             filename = line[:-1] + '.csv' #the title is used to make the filename.csv
             new_file = open((os.path.join('csv_schedules', filename)), 'w') #new file opened to write to
@@ -23,7 +23,7 @@ def parser():
 
         else: #Else, the csv line belongs to the title that was found in a previous line
             new_file = open((os.path.join('csv_schedules', filename)), 'a') #appends the csv to the new file
-            new_file.write(line[:-1] + "\n")
+            new_file.write(line[:-1] + '\n')
             new_file.close()
 
     initial.close()

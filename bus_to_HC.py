@@ -23,7 +23,7 @@ def bus_to_HC():
         bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S') #converts the time string into a datetime object for comparison
         if time_now <= bus_time and time_in_2hrs >= bus_time:
         
-            next_buses += str(time_dict['LeaveBrynMawr']) + " -> " + str(time_dict['ArriveHaverford']) + "\n"     
+            next_buses += str(time_dict['LeaveBrynMawr']) + """ -> " + str(time_dict['ArriveHaverford']) +""" "\n"     
      
     if next_buses != "":
         return next_buses
