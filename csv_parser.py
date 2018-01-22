@@ -10,9 +10,9 @@ def parser():
     #loops through the input file
     for line in initial:
         #This block fixes the headings for Saturday night and Sunday.
-        if line == "BrynMawrtoHaverford,HaverfordtoBrynMawr\n":
+        if line == "BrynMawrtoHaverford,HaverfordtoBrynMawr\r\n":
         	line = "LeaveBrynMawr,LeaveHaverford\n"
-        if line == "LeavesBMC,LeavesSuburbanSquare,LeavesHCSouthLotBusStop,LeavesStokes,LeavesSuburbanSquare\n":
+        if line == "LeavesBMC,LeavesSuburbanSquare,LeavesHCSouthLotBusStop,LeavesStokes,LeavesSuburbanSquare\r\n":
             line = "LeaveBrynMawr,LeaveSuburbanSquare,LeaveHCSouthLotBusStop,LeaveHaverford,LeaveSuburbanSquare\n"
             
         if ',' not in line: #If the line doesn't contain a comma, it's a title

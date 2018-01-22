@@ -14,13 +14,12 @@
         <link rel="stylesheet" href="../static/css/normalize.css">
         <link rel="stylesheet" href="../static/css/main.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="../static/css/clock.css">
     </head>
     <body>
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-
-        <!-- Add your site or application content here -->
 
         <!--<div class="header"><h1>Blue Bus Schedule</h1></div>-->
 
@@ -48,6 +47,7 @@
 
         <!--Button div for styling both the buttons. They
             can be styled individually if necessary.-->
+        <canvas class id="canvas" width="500" height="500" ></canvas>
         <div class = "btn-group">
         	<button class=option-toHaverford><span>To Haverford </span></button>
         	<button class=option-toBrynMawr><span>To Bryn Mawr </span></button>
@@ -68,6 +68,7 @@
         <script src="../static/js/main.js"></script>
         <script src="../static/js/toHaverford.js"></script>
         <script src="../static/js/toBrynMawr.js"></script>
+        <script src="../static/js/clock.js"></script>
 
 
         <script>

@@ -12,19 +12,17 @@ def bus_to_BMC():
     """
     time_dict_list = relevant_csv()
     today = (datetime.datetime.now()).strftime('%A')
-    print today
     next_buses = ""
    
     for time_dict in  time_dict_list:
         time_now =  datetime.datetime.now()  #current time
-        print time_now
         time_in_2hrs = datetime.datetime.now() + datetime.timedelta(hours=1.5) #the point after the next 3 buses
         
         bus_time = str(timestring.Date(time_dict['LeaveHaverford'])) #formats to today's time as a string
         bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S') #converts the time string into a datetime object for comparison
 
         if time_now <= bus_time and time_in_2hrs >= bus_time:
-            next_buses += str(time_dict['LeaveHaverford']) """+ " -> " +str(time_dict['ArriveBrynMawr'])""" + "\n"
+            next_buses += str(time_dict['LeaveHaverford']) + '\t' + "\n"
     
     if next_buses != "":
         return next_buses
