@@ -24,7 +24,7 @@ var canvas = document.getElementById("canvas");
 
 			//Background
 			gradient = ctx.createRadialGradient(250, 250, 5, 250, 250, 300);
-			gradient.addColorStop(0, "#fff0be");
+			gradient.addColorStop(0, "white");
 			gradient.addColorStop(1, "white");
 			ctx.fillStyle = gradient;
 			//ctx.fillStyle = 'rgba(00 ,00 , 00, 1)';
