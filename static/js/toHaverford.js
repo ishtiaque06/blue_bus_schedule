@@ -4,7 +4,7 @@ from the server to represent on the site*/
 $(function() {
               $('button.option-toHaverford').bind('click', function() {
                 $.getJSON('/to_Haverford', function(response) {
-                  $("p#toDestination").text(response.result);
+                  $("p#toDestination").text(response);
                 });
                 return false;
               });

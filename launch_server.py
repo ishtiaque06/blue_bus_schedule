@@ -1,6 +1,6 @@
 #import libraries needed to show the page
 from flask import Flask, render_template, jsonify, request
-
+import json
 #load bus schedule scripts
 from bus_to_HC import *
 from bus_to_BMC import *
@@ -19,14 +19,14 @@ def to_Haverford():
 	print "Debugging at Haverford"
 	times = bus_to_HC()
 	
-	return jsonify(result=times)
+	return json.dumps(times)
 
 @app.route('/to_Bryn_Mawr')
 def to_Bryn_Mawr():
 	print "Debugging at Bryn Mawr"
 	times = bus_to_BMC()
 	
-	return jsonify(result=times)
+	return json.dumps(times)
 
 @app.errorhandler(404)
 def page_not_found(e):
