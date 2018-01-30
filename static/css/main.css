@@ -257,6 +257,7 @@ body {
   color: #fff0be;
   transition-duration: 1.0s;
   text-align: center;
+  margin: 5px;
 }
 
 #day:hover, #hour:hover, #minute:hover, #ampm:hover, #direction:hover {
