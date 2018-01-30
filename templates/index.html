@@ -10,57 +10,103 @@
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
         <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="../static/css/main.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="../static/css/clock.css">
     </head>
     <body>
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <!--<div class="header"><h1>Blue Bus Schedule</h1></div>-->
-
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="http://www.haverford.edu">Haverford College</a>
-            <a href="http://www.brynmawr.edu">Bryn Mawr College</a>
-        </div>
-
-        <header class="header-basic-light">
-
-	        <div>
-                <button style="font-size:30px;cursor:pointer;float:left; color: #fff0be;
-                border: none; background-color: Transparent;margin-top: 15px" onclick="openNav()">&#9776;</button>
-
-		        <h1 class="header-h1">Bi-Co Blue Blus Schedule</h1>
-
-	        </div>
-
-        </header>
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><h1>Blue Bus Times</h1></a>
+        </nav>
 
         <!--Main paragraph-->
+        <p></p>
         <p>This page lets you know when the next Blue Bus is. You can also specify a time when you want to leave and get the next Blue Bus time from that.</p>
 
         <!--Button div for styling both the buttons. They
             can be styled individually if necessary.-->
-        <canvas class id="canvas" width="500" height="500" ></canvas>
-        <div class = "btn-group">
-        	<button class=option-toHaverford><span>To Haverford </span></button>
-        	<button class=option-toBrynMawr><span>To Bryn Mawr </span></button>
+        <!--<div style="width: 500px; height: 400px; position: absolute;"><canvas class id="canvas" width="500px" height="400px"></canvas></div>-->
+        <div class="text-center">
+            <div class = "btn-group">
+        	   <button class=option-toHaverford><span>To Haverford </span></button>
+        	   <button class=option-toBrynMawr><span>To Bryn Mawr </span></button>
+            </div>
         </div>
-
+        <p>
         <!--This paragraph element changes according to button press-->
-        <p id=toDestination>What are the times?</p>
+        <p id=toDestination>The next buses will appear here!</p>
 	
-
+        <p>
+        <p>Looking for a specific time to be at the bus stop?</p>
+        <div class="select-time">
+            <select id="day">
+                <option>Day</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+            </select>
+            <br>
+            <select id="hour">
+                <option>Hour</option>
+                <option>12</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+            </select>
+            <select id="minute">
+                <option>Minute</option>
+                <option>0</option>
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+                <option>20</option>
+                <option>25</option>
+                <option>30</option>
+                <option>35</option>
+                <option>40</option>
+                <option>45</option>
+                <option>50</option>
+                <option>55</option>
+            </select>
+            <select id="ampm">
+                <option>AM/PM</option>
+                <option>AM</option>
+                <option>PM</option>
+            </select>
+            <br>
+            <p>
+            <select id="direction">
+                <option>Where do you want to go (not wherever, mind you)?</option>
+                <option>To Haverford</option>
+                <option>To Bryn Mawr</option>
+            </select>
+        </div>
+        <br>
+        <div style="text-align: center">
+            <button id="calculate-time">Find out when the Bus leaves!</button>
+        </div>
+        <p id="future-times">
         <!--scripts!-->
         <script src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <script>window.jQuery || document.write('<script src="../static/js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
 
@@ -68,22 +114,6 @@
         <script src="../static/js/main.js"></script>
         <script src="../static/js/toHaverford.js"></script>
         <script src="../static/js/toBrynMawr.js"></script>
-        <script src="../static/js/clock.js"></script>
-
-
-        <script>
-            function openNav() {
-            document.getElementById("mySidenav").style.width = "300px";
-            document.getElementById("main").style.marginLeft = "300px";
-            document.body.style.backgroundColor = "rgba(162, 0, 0, 1)";
-            }
-
-            function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
-            document.body.style.backgroundColor = "white";
-            }
-        </script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
