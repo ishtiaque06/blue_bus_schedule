@@ -98,8 +98,8 @@ textarea {
    ========================================================================== */
 
 h1 {
-    font-family: 'Bellefair', serif;
-    font-size: 50px;
+    font-family: 'Railway', sans-serif;
+    font-size: 40px;
     text-align: center;
     vertical-align: middle;
     line-height: 90px;
@@ -113,27 +113,18 @@ p {
     text-align: center;
 }
 
-.header {
-    background-color: #03a9f4;
-    top: 0px;
-    display: block;
-    width: 100%;
-    height: 90px;
-    vertical-align: middle;
-    text-align: center;
-}
-
 body {
     /*background-color: #81d4fa;*/
     padding: 0;
     margin: 0;
     transition: background-color .5s;
+    background-image: url("/static/img/light-veneer.png");
+    background-repeat: repeat-xy;
 }
 
 
 .btn-group {
     text-align: center;
-
 }
 
 .option-toHaverford {
@@ -141,7 +132,7 @@ body {
     border: none;
     color: #fff0be;
     font-family: 'Encode Sans Expanded', sans-serif;
-    padding: 20px 40px;
+    padding: 20px 20px;
     text-align: center;
     font-size: 20px;
     cursor: pointer;
@@ -182,7 +173,7 @@ body {
     border: none;
     color: #a20000;
     font-family: 'Encode Sans Expanded', sans-serif;
-    padding: 20px 40px;
+    padding: 20px 20px;
     text-align: center;
     font-size: 20px;
     cursor: pointer;
@@ -217,109 +208,62 @@ body {
   right: 0;
 }
 
-
-
-
-
-.header-basic-light{
-	padding: 20px 40px;
-	box-sizing:border-box;
-	box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
-	height: 90px;
-	background-color: #A20000;
-	text-align: center;
+.navbar {
+  background: #A20000!important;
+  height: 80px;
 }
-
-
-.header-basic-light .header-limiter {
-	max-width: 1200px;
-	text-align: center;
-	margin: 0 auto;
-}
-
-.header-basic-light .header-limiter h1{
-	float: left;
-	font: normal 28px Cookie, Arial, Helvetica, sans-serif;
-	line-height: 40px;
-	margin: 0;
-	text-align: center;
-}
-
-.header-basic-light .header-limiter h1 span {
-	color: #000000;
-	text-align: center;
-	vertical-align: middle;
-}
-
-.header-h1 {
-    text-align: center;
-    margin-top: -10px;;
-    color: #fff0be;
-    font-family: 'Josefin Slab', serif;
-}
-
-/* The header links */
-
-.header-basic-light .header-limiter a {
-	color: #000000;
-	text-decoration: none;
-	text-align: center;
-}
-
-
-/* Making the header responsive. */
-
-
-/*side navigation bar*/
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #fff0be;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    font-family: 'Josefin Slab', serif;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #a20000;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #F4511E;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff0be!important;
 }
 
 #toDestination {
   white-space: pre-line;
 }
 
+.select-time {
+  text-align: center;
+}
+
+#calculate-time {
+  background-color: #fff0be;
+  border: none;
+  color: #a20000;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  align-items: center;
+  border-radius: 8px;
+  transition-duration: 1.0s;
+}
+
+#calculate-time:hover {
+  background-color: #a20000;
+  border: none;
+  color: #fff0be;
+}
+
+#day, #hour , #minute, #ampm {
+  background-color: #a20000;
+  border-radius: 8px;
+  padding: 10px 10px;
+  color: #fff0be;
+  transition-duration: 1.0s;
+}
+
+#day:hover, #hour:hover, #minute:hover, #ampm:hover {
+  background-color: #fff0be;
+  border-radius: 8px;
+  padding: 10px 10px;
+  color: #a20000;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
