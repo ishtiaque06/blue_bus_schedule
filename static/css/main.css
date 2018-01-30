@@ -250,15 +250,16 @@ body {
   color: #fff0be;
 }
 
-#day, #hour , #minute, #ampm {
+#day, #hour , #minute, #ampm, #direction {
   background-color: #a20000;
   border-radius: 8px;
   padding: 10px 10px;
   color: #fff0be;
   transition-duration: 1.0s;
+  text-align: center;
 }
 
-#day:hover, #hour:hover, #minute:hover, #ampm:hover {
+#day:hover, #hour:hover, #minute:hover, #ampm:hover, #direction:hover {
   background-color: #fff0be;
   border-radius: 8px;
   padding: 10px 10px;
