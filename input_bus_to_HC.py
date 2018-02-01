@@ -14,7 +14,7 @@ def input_bus_to_HC(string):
     input_time = str(timestring.Date((string.split(","))[0]))
     input_time = datetime.datetime.strptime(input_time, '%Y-%m-%d %H:%M:%S')
     
-    next_buses = "These are the next bus times to Haverford before and after %s.\n"%(string)
+    next_buses = "Buses to Haverford before and after %s.\n"%(string)
    
     for time_dict in time_dict_list:
         time_before_2hrs = input_time - datetime.timedelta(hours=1.5) #the point before the next 3 buses
@@ -24,7 +24,7 @@ def input_bus_to_HC(string):
         bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S') #converts the time string into a datetime object for comparison
 
         if time_before_2hrs <= bus_time and time_in_2hrs >= bus_time:
-            next_buses += str(time_dict['LeaveBrynMawr']) + '\t' + "\n"
+            next_buses += str(time_dict['LeaveBrynMawr']) + "\n"
             
     
     if next_buses != "":
