@@ -2,6 +2,7 @@
 #multiple lines of comma-separated values and outputs them into separate csv files
 
 import os.path
+import csv
 
 def parser():
     #Open the input file as read-only
@@ -27,7 +28,18 @@ def parser():
             new_file.close()
 
     initial.close()
+    data = []
 
+    """
+C   This part of the function ensures each csv has times with 24 hours
+"   """
+    for day in csv_list:
+        for row in csv.reader(open((os.path.join('csv_schedules', day)),'rb'), delimiter=','):
+            for time in row:
+                data.append(time)
+        break
+            
+    
     return csv_list
 
 
