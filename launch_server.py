@@ -4,6 +4,7 @@ import json
 #load bus schedule scripts
 from bus_to_HC import *
 from bus_to_BMC import *
+from input_bus_to_HC import *
 
 #initialize flask instance
 app = Flask(__name__)
@@ -27,6 +28,15 @@ def to_Bryn_Mawr():
 	times = bus_to_BMC()
 	
 	return json.dumps(times)
+
+@app.route('/time_to_Haverford', methods = ["POST"])
+def time_to_Haverford():
+	print "Debugging future time from Bryn Mawr to Haverford"
+	if request.method == 'POST':
+		print "Here I am with POST!"
+		time = request.data
+		result = input_bus_to_HC(time)
+		print result
 
 @app.errorhandler(404)
 def page_not_found(e):
