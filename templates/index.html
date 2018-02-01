@@ -9,6 +9,7 @@
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
+		
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="../static/css/main.css">
@@ -19,12 +20,15 @@
         <![endif]-->
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"><h1>Blue Bus Times</h1></a>
+            <a class="navbar-brand" href="#"><h1>Blue Bus Times</h1> </a>
+						
         </nav>
 
         <!--Main paragraph-->
-        <p></p>
-        <p>This page lets you know when the next Blue Bus is. You can also specify a time when you want to leave and get the next Blue Bus time from that.</p>
+        <p> The Blue Bus and vans pick up and drop off at Bryn Mawr's Pembroke Arch Bus Stop and Stokes Bay at Haverford College.</p>
+
+      
+		<p> What are the next buses from now? </p>
 
         <!--Button div for styling both the buttons. They
             can be styled individually if necessary.-->
@@ -37,22 +41,12 @@
         </div>
         <p>
         <!--This paragraph element changes according to button press-->
-        <p id=toDestination>The next buses will appear here!</p>
+        <p id=toDestination><i>Bus times appear here!</i></p>
 	
         <p>
-        <p>Looking for a specific time to be at the bus stop?</p>
+        <p>Looking for a specific time instead?</p>
         <div class="select-time">
-            <select id="day">
-                <option>Day</option>
-                <option>Monday</option>
-                <option>Tuesday</option>
-                <option>Wednesday</option>
-                <option>Thursday</option>
-                <option>Friday</option>
-                <option>Saturday</option>
-                <option>Sunday</option>
-            </select>
-            <br>
+                        
             <select id="hour">
                 <option>Hour</option>
                 <option>12</option>
@@ -88,10 +82,20 @@
                 <option>AM</option>
                 <option>PM</option>
             </select>
+			<select id="day">
+                <option>Day</option>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+                <option>Sunday</option>
+            </select>
             <br>
             <p>
             <select id="direction">
-                <option>Where do you want to go (not wherever, mind you)?</option>
+                <option>Destination?</option>
                 <option>To Haverford</option>
                 <option>To Bryn Mawr</option>
             </select>

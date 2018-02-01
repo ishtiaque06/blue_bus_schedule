@@ -11,8 +11,8 @@ def bus_to_HC():
     Gets relevant bus times according to the current time
     """
     time_dict_list = relevant_csv()
-    
-    next_buses = ""
+    next_buses = "Bus from Bryn Mawr:\n"
+	
     for time_dict in  time_dict_list:
         time_now =  datetime.datetime.now()  #current time
         time_in_2hrs = datetime.datetime.now() + datetime.timedelta(hours=2.0) #the point after the next 3 buses

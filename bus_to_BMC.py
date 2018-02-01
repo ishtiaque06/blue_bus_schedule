@@ -12,7 +12,7 @@ def bus_to_BMC():
     """
     time_dict_list = relevant_csv()
     today = (datetime.datetime.now()).strftime('%A')
-    next_buses = ""
+    next_buses = "Bus from Haverford:\n"
    
     for time_dict in  time_dict_list:
         time_now =  datetime.datetime.now()  #current time
