@@ -10,13 +10,11 @@ bus times as a list of dictionaries.
 """
 def input_time_function(string):
     string = string.split(",")
-    csv_list = parser() #list of parsed csvs from BlueBus Website
+    csv_list = parser() #list of parsed csvs from BlueBus 
     time_now =  datetime.datetime.now()
-    day_selected = string[1]  
-    
+    day_selected = string[1]
+    relevant_csv = ""
     for csv in csv_list:
-        global relevant_csv
-        
         if day_selected in csv:
             relevant_csv = csv
             
@@ -26,7 +24,6 @@ def input_time_function(string):
             
         elif (day_selected == "Saturday") and ("Night" in csv) and (time_now > timestring.Date('4:45PM')):
             relevant_csv = csv
-    
     timeDict = get_data(relevant_csv)
     
     return timeDict

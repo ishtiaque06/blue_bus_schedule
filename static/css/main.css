@@ -35,7 +35,7 @@ html {
     background: #b3d4fc;
     text-shadow: none;
 
-
+}
 /*
  * A better looking default horizontal rule
  */
@@ -127,7 +127,7 @@ body {
     text-align: center;
 }
 
-.option-toHaverford {
+.option-toHaverford, #time-to-Haverford {
     background-color: #a20000;
     border: none;
     color: #fff0be;
@@ -167,8 +167,31 @@ body {
   right: 0;
 }
 
+#time-to-Haverford span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
 
-.option-toBrynMawr {
+#time-to-Haverford span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#time-to-Haverford:hover span {
+  padding-right: 25px;
+}
+
+#time-to-Haverford:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.option-toBrynMawr, #time-to-BrynMawr {
     background-color: #fff0be;
     border: none;
     color: #a20000;
@@ -208,6 +231,31 @@ body {
   right: 0;
 }
 
+#time-to-BrynMawr span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#time-to-BrynMawr span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#time-to-BrynMawr:hover span {
+  padding-right: 25px;
+}
+
+#time-to-BrynMawr:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 .navbar {
   background: #A20000!important;
   height: 80px;
@@ -223,6 +271,10 @@ body {
 
 #toDestination {
   white-space: pre-line;
+}
+
+#future-times {
+  white-space: pre-wrap;
 }
 
 .select-time {

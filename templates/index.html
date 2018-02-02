@@ -64,8 +64,8 @@
             </select>
             <select id="minute">
                 <option>Minute</option>
-                <option>0</option>
-                <option>5</option>
+                <option>00</option>
+                <option>05</option>
                 <option>10</option>
                 <option>15</option>
                 <option>20</option>
@@ -93,16 +93,12 @@
                 <option>Sunday</option>
             </select>
             <br>
-            <p>
-            <select id="direction">
-                <option>Destination?</option>
-                <option>To Haverford</option>
-                <option>To Bryn Mawr</option>
-            </select>
         </div>
         <br>
-        <div style="text-align: center">
-            <button id="calculate-time">Find out when the Bus leaves!</button>
+        <div class="text-center">
+            <div class = "btn-group">
+                <button id = "time-to-Haverford"><span>To Haverford</span></button>
+                <button id = "time-to-BrynMawr"><span>To Bryn Mawr</span></button>
         </div>
         <p id="future-times">
         <!--scripts!-->
@@ -118,6 +114,7 @@
         <script src="../static/js/main.js"></script>
         <script src="../static/js/toHaverford.js"></script>
         <script src="../static/js/toBrynMawr.js"></script>
+        <script src="../static/js/future_time.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
