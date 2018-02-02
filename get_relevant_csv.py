@@ -26,7 +26,7 @@ def relevant_csv():
             relevant_csv = csv
                               
     time_dict_list = get_data(relevant_csv)  #a list of dictionaries with relevant time for the current day
-    
+
     return time_dict_list
 
 

@@ -14,7 +14,7 @@ def input_bus_to_BMC(string):
     input_time = str(timestring.Date((string.split(","))[0]))
     input_time = datetime.datetime.strptime(input_time, '%Y-%m-%d %H:%M:%S')
     
-    next_buses = "Buses to Bryn Mawr before and after %s:\n"%(string)
+    next_buses = ""
    
     for time_dict in time_dict_list:
         time_before_2hrs = input_time - datetime.timedelta(hours=1.5) #the point before the next 3 buses
@@ -28,7 +28,7 @@ def input_bus_to_BMC(string):
             
     
     if next_buses != "":
-        return next_buses
+        return ("Buses from Haverford before & after %s:\n"%(string) + next_buses)
     
     else:
-        return "Sorry! There are no buses at this time. Please check back later!"
+        return "Sorry! There are no buses at this time.\n Please input a different time!"
