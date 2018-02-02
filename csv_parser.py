@@ -31,8 +31,8 @@ def parser():
     data = []
 
     """
-C   This part of the function ensures each csv has times with 24 hours
-"   """
+    This part of the function ensures each csv has times with 24 hours\
+    """
     for day in csv_list:
         for row in csv.reader(open((os.path.join('csv_schedules', day)),'rb'), delimiter=','):
             for time in row:
