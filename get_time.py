@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 import csv
 import os.path
 
+from get_csv_data import get_data
+
 """
 Function parses through the Blue_Bus website and retrives all Bus times in a CSV file
 """
@@ -69,6 +71,7 @@ def get_time():
                     writer = csv.writer(f)
                     writer.writerow(headers)
                     writer.writerows(row for row in rows if row)
+	
 
 #Call function when the file is run.
 if __name__ == '__main__':
