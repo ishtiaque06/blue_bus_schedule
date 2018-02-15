@@ -11,7 +11,7 @@ def bus_to_HC():
     Gets relevant bus times according to the current time
     """
     time_dict_list = relevant_csv()
-    next_buses = ""
+    next_buses = "Bus from Bryn Mawr:\n"
 	
     for time_dict in  time_dict_list:
         time_now =  datetime.datetime.now()  #current time
@@ -22,9 +22,9 @@ def bus_to_HC():
         bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S') #converts the time string into a datetime object for comparison
         if time_now <= bus_time and time_in_2hrs >= bus_time:
         
-            next_buses += "Bus from Bryn Mawr:\n" + str(time_dict['LeaveBrynMawr']) + "\n"     
+            next_buses += str(time_dict['LeaveBrynMawr']) + "\n"     
      
-    if next_buses != "":
+    if next_buses != "Bus from Bryn Mawr:\n":
         return next_buses
     
     else:
