@@ -59,7 +59,6 @@ def get_time():
             for row in table.find_all('tr'):
                     rows.append([val.text.encode('utf8') 
                             for val in row.find_all('td')])
-                    #print rows
 
             '''This deletes empty lists generated at the start of every day's rows.
             This results from parsing the web page and so is unavoidable.'''
