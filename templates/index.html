@@ -25,26 +25,22 @@
         </nav>
 
         <!--Main paragraph-->
-        <p> The Blue Bus and vans pick up and drop off at Bryn Mawr's Pembroke Arch Bus Stop and Stokes Bay at Haverford College.</p>
-
-      
-		<p> What are the next buses from now? </p>
+		<p><strong> When are the next buses from now? </strong></p>
 
         <!--Button div for styling both the buttons. They
             can be styled individually if necessary.-->
-        <!--<div style="width: 500px; height: 400px; position: absolute;"><canvas class id="canvas" width="500px" height="400px"></canvas></div>-->
         <div class="text-center">
             <div class = "btn-group">
-        	   <button class=option-toHaverford><span>To Haverford </span></button>
-        	   <button class=option-toBrynMawr><span>To Bryn Mawr </span></button>
+        	   <button class="option-toHaverford"><span>To Haverford </span></button>
+        	   <button class="option-toBrynMawr"><span>To Bryn Mawr </span></button>
             </div>
         </div>
         <p>
         <!--This paragraph element changes according to button press-->
-        <p id=toDestination><i>Bus times appear here!</i></p>
+        <p id="toDestination"><i>Bus times appear here!</i></p>
 	
         <p>
-        <p>Looking for a specific time instead?</p>
+        <p><strong>Looking for a specific time instead?</strong></p>
         <div class="select-time">
                         
             <select id="hour">
@@ -97,8 +93,8 @@
         <br>
         <div class="text-center">
             <div class = "btn-group">
-                <button id = "time-to-Haverford"><span>To Haverford</span></button>
-                <button id = "time-to-BrynMawr"><span>To Bryn Mawr</span></button>
+                <button class="future" id = "time_to_Haverford"><span>To Haverford</span></button>
+                <button class="future" id = "time_to_BrynMawr"><span>To Bryn Mawr</span></button>
         </div>
         <p id="future-times">
         <!--scripts!-->

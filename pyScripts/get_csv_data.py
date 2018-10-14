@@ -1,9 +1,11 @@
 """
 Takes a csv filename and returns data as a list of dictionaries
 """
-import os.path
+import os.path, sys
+print (sys.path)
 def get_data(filename):
-    f = open(os.path.join('csv_schedules', filename), "r")
+    current_dir = os.path.dirname(__file__)
+    f = open(os.path.join(current_dir, "csv_schedules", filename), "r")
     line = f.readline() #reads line in the file
     location = line.strip().split(",")  # gets the location, either leaving or arriving HC or BMC
     
@@ -29,9 +31,6 @@ def get_data(filename):
                 row[location[exact_location]] = bus_times[exact_location]
             
             data.append(row)
-            
-            
-            
     f.close()
     
     return data

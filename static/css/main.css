@@ -127,7 +127,7 @@ body {
     text-align: center;
 }
 
-.option-toHaverford, #time-to-Haverford {
+.option-toHaverford, #time_to_Haverford {
     background-color: #a20000;
     border: none;
     color: #fff0be;
@@ -167,14 +167,14 @@ body {
   right: 0;
 }
 
-#time-to-Haverford span {
+#time_to_Haverford span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-#time-to-Haverford span:after {
+#time_to_Haverford span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -183,15 +183,15 @@ body {
   transition: 0.5s;
 }
 
-#time-to-Haverford:hover span {
+#time_to_Haverford:hover span {
   padding-right: 25px;
 }
 
-#time-to-Haverford:hover span:after {
+#time_to_Haverford:hover span:after {
   opacity: 1;
   right: 0;
 }
-.option-toBrynMawr, #time-to-BrynMawr {
+.option-toBrynMawr, #time_to_BrynMawr {
     background-color: #fff0be;
     border: none;
     color: #a20000;
@@ -231,14 +231,14 @@ body {
   right: 0;
 }
 
-#time-to-BrynMawr span {
+#time_to_BrynMawr span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-#time-to-BrynMawr span:after {
+#time_to_BrynMawr span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -247,11 +247,11 @@ body {
   transition: 0.5s;
 }
 
-#time-to-BrynMawr:hover span {
+#time_to_BrynMawr:hover span {
   padding-right: 25px;
 }
 
-#time-to-BrynMawr:hover span:after {
+#time_to_BrynMawr:hover span:after {
   opacity: 1;
   right: 0;
 }

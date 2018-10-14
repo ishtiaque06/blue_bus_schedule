@@ -1,7 +1,16 @@
 #import libraries needed to show the page
 from flask import Flask, render_template, jsonify, request
 import json
+import os, sys
 #load bus schedule scripts
+
+current_dir = os.path.dirname(__file__)
+csv_dir = os.path.join(current_dir, 'csv_schedules')
+script_dir = os.path.join(current_dir, 'pyScripts')
+
+sys.path.append(script_dir)
+sys.path.append(csv_dir)
+
 from bus_to_HC import *
 from bus_to_BMC import *
 from input_bus_to_HC import *
@@ -18,15 +27,13 @@ def index():
 #This sends next bus times from Bryn Mawr to Haverford
 @app.route('/to_Haverford')
 def to_Haverford():
-	print "Debugging at Haverford"
 	times = bus_to_HC()
-	print times
+	print (times)
 	return json.dumps(times)
 
 #This sends the next bus times from Haverford to Bryn Mawr
 @app.route('/to_Bryn_Mawr')
 def to_Bryn_Mawr():
-	print "Debugging at Bryn Mawr"
 	times = bus_to_BMC()
 	return json.dumps(times)
 
@@ -40,20 +47,16 @@ the website.
 #This sends the bus times based on a certain time of the week from HC to BMC
 @app.route('/time_to_Haverford', methods = ["POST"])
 def time_to_Haverford():
-	print "Debugging future time from Bryn Mawr to Haverford"
 	if request.method == 'POST':
-		print "Here I am with POST!"
-		time = request.data.replace('"', '')
+		time = request.data.decode('utf-8')
 		result = input_bus_to_HC(time)
 		return json.dumps(result)
 
 #This sends the bus times based on a certain time of the week from HC to BMC
 @app.route('/time_to_BrynMawr', methods = ["POST"])
 def time_to_BrynMawr():
-	print "Debugging future time from Haverford to Bryn Mawr"
 	if request.method == 'POST':
-		print "Here I am with POST!"
-		time = request.data.replace('"', '')
+		time = request.data.decode('utf-8')
 		result = input_bus_to_BMC(time)
 		return json.dumps(result)
 
