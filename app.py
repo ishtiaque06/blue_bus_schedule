@@ -24,6 +24,7 @@ csv_parser.parser()
 format_times.fix_Monday()
 format_times.insert_times_to_next_day()
 format_times.fix_SaturdayDayTime()
+format_times.fix_Monday_post()
 
 #initialize flask instance
 app = Flask(__name__)

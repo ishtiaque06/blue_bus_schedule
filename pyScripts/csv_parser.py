@@ -5,6 +5,7 @@
 import os.path
 import csv
 
+
 def parser():
     current_dir = os.path.dirname(__file__)
     #Open the input file as read-only

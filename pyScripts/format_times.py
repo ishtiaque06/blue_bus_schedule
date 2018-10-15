@@ -20,6 +20,19 @@ def fix_Monday():
 		file.writelines(lines)
 	return 0
 
+def fix_Monday_post():
+	lines = []
+	with open(os.path.join(csv_dir,'Monday.csv')) as file:
+		lines = file.readlines()
+	line_to_modify = lines[1].split(',')
+	line_to_modify.insert(1,'')
+	line_to_modify[2]='12:15AM'
+	line_to_modify.append('\n')
+	lines[1] = ','.join(line_to_modify)
+	with open(os.path.join(csv_dir,'Monday.csv'), 'w') as file:
+		file.writelines(lines)
+	return 0
+
 '''
 	The last-column times from Friday are not formatted according
 	to Saturday's columns. This takes care of that.
@@ -97,3 +110,4 @@ if __name__=="__main__":
 	fix_Monday()
 	insert_times_to_next_day()
 	fix_SaturdayDayTime()
+	fix_Monday_post()
