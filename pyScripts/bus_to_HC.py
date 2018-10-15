@@ -16,7 +16,6 @@ def bus_to_HC():
     for time_dict in  time_dict_list:
         time_now =  datetime.datetime.now()  #current time
         time_in_2hrs = datetime.datetime.now() + datetime.timedelta(hours=2.0) #the point after the next 3 buses
-        
         bus_time = str(timestring.Date(time_dict['LeaveBrynMawr'])) #formats to today's time as a string
         
         bus_time = datetime.datetime.strptime(bus_time, '%Y-%m-%d %H:%M:%S') #converts the time string into a datetime object for comparison

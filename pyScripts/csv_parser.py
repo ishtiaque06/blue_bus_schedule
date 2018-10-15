@@ -1,5 +1,6 @@
 #This file parses a csv file which has multiple titles without commas followed by
 #multiple lines of comma-separated values and outputs them into separate csv files
+# Then writes these files into the corresponding days' CSV's.
 
 import os.path
 import csv
@@ -39,4 +40,3 @@ def parser():
 
 if __name__ == '__main__':
     parser()
-

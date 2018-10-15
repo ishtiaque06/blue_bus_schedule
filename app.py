@@ -2,10 +2,11 @@
 from flask import Flask, render_template, jsonify, request
 import json
 import os, sys
-#load bus schedule scripts
 
 current_dir = os.path.dirname(__file__)
 csv_dir = os.path.join(current_dir, 'csv_schedules')
+
+#load bus schedule scripts
 script_dir = os.path.join(current_dir, 'pyScripts')
 
 sys.path.append(script_dir)
@@ -15,6 +16,14 @@ from bus_to_HC import *
 from bus_to_BMC import *
 from input_bus_to_HC import *
 from input_bus_to_BMC import *
+
+import format_times
+import csv_parser
+
+csv_parser.parser()
+format_times.fix_Monday()
+format_times.insert_times_to_next_day()
+format_times.fix_SaturdayDayTime()
 
 #initialize flask instance
 app = Flask(__name__)

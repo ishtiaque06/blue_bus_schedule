@@ -7,12 +7,10 @@ def get_data(filename):
     f = open(os.path.join(current_dir, "csv_schedules", filename), "r")
     line = f.readline() #reads line in the file
     location = line.strip().split(",")  # gets the location, either leaving or arriving HC or BMC
-    
     data = [] 
 
     for line in f:
         bus_times = line.strip().split(",") #gives a list of time from each row
-        
         """
         Checks to ensure that data fields are uniform
         """
