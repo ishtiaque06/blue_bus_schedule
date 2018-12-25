@@ -2,7 +2,6 @@
 Takes a csv filename and returns data as a list of dictionaries
 """
 import os.path, sys
-print (sys.path)
 def get_data(filename):
     current_dir = os.path.dirname(__file__)
     f = open(os.path.join(current_dir, "csv_schedules", filename), "r")

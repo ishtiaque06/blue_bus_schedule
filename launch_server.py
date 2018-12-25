@@ -28,7 +28,6 @@ def index():
 @app.route('/to_Haverford')
 def to_Haverford():
 	times = bus_to_HC()
-	print (times)
 	return json.dumps(times)
 
 #This sends the next bus times from Haverford to Bryn Mawr
